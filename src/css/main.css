@@ -89,7 +89,7 @@ html {
 
 }
 
-button.b1 {
+button.openAlertButton {
 
     background-color: #E4C1AE;
     height: 48px;
@@ -104,7 +104,7 @@ button.b1 {
     font-size: 16px;
 }
 
-button.b1:hover {
+button.openAlertButton:hover {
 
     background-color: #705F55;
     height: 52px;
@@ -205,7 +205,7 @@ button.b1:hover {
 }
 
 
-.b2 {
+.resetCounterButton {
 
     background-color: #E4C1AE;
     height: 48px;
@@ -220,7 +220,7 @@ button.b1:hover {
 
 }
 
-.b2:hover {
+.resetCounterButton:hover {
 
     background-color: #705F55;
     height: 52px;
@@ -294,7 +294,7 @@ button.b1:hover {
     
     }
 
-    button.b1 {
+    button.openAlertButton {
 
         height: 40px;
         width: 118px;
@@ -302,7 +302,7 @@ button.b1:hover {
 
     }
     
-    button.b1:hover {
+    button.openAlertButton:hover {
     
         background-color: #705F55;
         height: 42px;
@@ -366,7 +366,7 @@ button.b1:hover {
 
     }
 
-    button.b1 {
+    button.openAlertButton {
         
         height: 36px;
         width: 114px;
@@ -374,7 +374,7 @@ button.b1:hover {
 
     }
     
-    button.b1:hover {
+    button.openAlertButton:hover {
     
         height: 49px;
         width: 119px;
@@ -481,7 +481,7 @@ button.b1:hover {
     
     }
 
-    button.b1 {
+    button.openAlertButton {
 
         height: 40px;
         width: 100px;
@@ -489,7 +489,7 @@ button.b1:hover {
         
     }
     
-    button.b1:hover {
+    button.openAlertButton:hover {
     
         height: 45px;
         width: 105px;
@@ -539,7 +539,7 @@ button.b1:hover {
 
     }
 
-    .b2 {
+    .resetCounterButton {
 
         height: 36px;
         width: 106px;
@@ -615,7 +615,7 @@ button.b1:hover {
     
     }
 
-    button.b1 {
+    button.openAlertButton {
 
         
         height: 40px;
@@ -624,7 +624,7 @@ button.b1:hover {
         
     }
     
-    button.b1:hover {
+    button.openAlertButton:hover {
     
         height: 45px;
         width: 105px;
@@ -676,7 +676,7 @@ button.b1:hover {
     }
 
 
-    .b2 {
+    .resetCounterButton {
 
         height: 36px;
         width: 106px;
