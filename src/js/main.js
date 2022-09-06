@@ -2,10 +2,10 @@ var alert = document.querySelector('.alert');
 var overlay = document.querySelector('.overlay');
 var close = document.querySelector('.close');
 
-close.addEventListener('click', closing);
-close.addEventListener('keypress', closing);
+close.addEventListener('click', closingAlert);
+close.addEventListener('keypress', closingAlert);
 
-    function closing(){
+    function closingAlert(){
     
         alert.style.opacity = '0';
         overlay.style.opacity = '0';
@@ -17,9 +17,9 @@ close.addEventListener('keypress', closing);
 
 
 
-var b1 = document.querySelector('.b1');
+var openAlertButton = document.querySelector('.openAlertButton');
                        
-b1.addEventListener('click', function() {
+openAlertButton.addEventListener('click', function() {
 
     alert.style.opacity = '1';
     overlay.style.opacity = '1';
@@ -32,7 +32,7 @@ b1.addEventListener('click', function() {
 
 var clicks = 0;
 
-b1.addEventListener('click', clickCounter);
+openAlertButton.addEventListener('click', clickCounter);
 
 function clickCounter() {
 
@@ -50,10 +50,10 @@ function clickCounter() {
 
 };
 
-var b2 = document.querySelector('.b2');
+var resetCounterButton = document.querySelector('.resetCounterButton');
 var counter = document.querySelector('.counter');
 
-b2.addEventListener('click', resetCounter);
+resetCounterButton.addEventListener('click', resetCounter);
 
 function resetCounter() {
 
@@ -64,11 +64,11 @@ function resetCounter() {
 };
 
 
-b2.addEventListener('click', changebtntext);
+resetCounterButton.addEventListener('click', changebtntext);
 
 function changebtntext() {
 
-    b2.innerHTML = 'Done!'; 
+    resetCounterButton.innerHTML = 'Done!'; 
 
 };
 
@@ -80,28 +80,28 @@ function changebtntext2() {
 
     setTimeout(function() {
 
-        b2.innerHTML = 'Reset Counter';
+        resetCounterButton.innerHTML = 'Reset Counter';
 
 
     }, 1000);
 
 };
 
-b1.addEventListener('click', rl)
+openAlertButton.addEventListener('click', refreshLocalStorage)
 
-function rl() {
+function refreshLocalStorage() {
 
 
     var a = localStorage.getItem('clickcount');
 
     if(a >= 5) {
 
-    b2.style.display = 'inline-block';
+    resetCounterButton.style.display = 'inline-block';
 
     } else {
 
 
-            b2.style.display = 'none';
+            resetCounterButton.style.display = 'none';
 
     }
 
@@ -119,7 +119,7 @@ function clickoutsidealert() {
     setTimeout(function(){ alert.style.display = 'none'; }, 600);
     setTimeout(function(){ overlay.style.display = 'none'; },600);
 
-    setTimeout(function() { b2.innerHTML = 'Reset Counter'; }, 600);
+    setTimeout(function() { resetCounterButton.innerHTML = 'Reset Counter'; }, 600);
     
     }
         
