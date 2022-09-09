@@ -8,6 +8,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 var replace = require('gulp-replace');
+const GulpClient = require('gulp');
 
 // File paths
 const files = { 
@@ -42,7 +43,7 @@ function cacheBustTask(){
         .pipe(dest('.'));
 }
 
-function watchTask(){
+ function watchTask(){
     watch([files.scssPath, files.jsPath], 
         parallel(scssTask, jsTask));    
 }
@@ -52,3 +53,10 @@ exports.default = series(
     cacheBustTask,
     watchTask
 );
+
+gulp.task("message", function(done) {
+
+    console.log("Running")
+    done()
+
+});
