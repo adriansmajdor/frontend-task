@@ -13,7 +13,7 @@ const GulpClient = require('gulp');
 
 // File paths
 const files = { 
-    scssPath: 'src/scss/**/*.scss',
+    scssPath: 'src/scss/*.scss',
     jsPath: 'src/js/**/*.js'
 };
 

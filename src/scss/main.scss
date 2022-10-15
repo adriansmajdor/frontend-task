@@ -1,5 +1,7 @@
-@forward 'globals';
-@forward 'layout';
+@forward 'content';
+@import 'content/breakpoints';
+
+
 
 html {
 	font-family: var(--font);
@@ -11,8 +13,52 @@ html {
 .main_container {
 	max-width: 1440px;
 	height: 426px;
-	padding-top: 96px;
+	padding-top: 96px; 
 	margin: 0 auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	gap: 95px;
+
+	@include xl {
+
+		gap: 35px;
+
+	}
+
+	@include lg {
+
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 20px;
+		padding-top: 45px;
+
+	}
+
+	@include md {
+
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 5px;
+
+	}
+
+	@include sm {
+
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 5px;
+
+	}
 
 
 	&__article {
@@ -25,6 +71,46 @@ html {
 		font-size: 16px;
 		line-height: 1.6;
 		font-weight: 300;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+        -webkit-box-ordinal-group: 2;
+		-ms-flex-order: 2;
+		order: 2;
+
+		@include xl {
+
+			max-height: 350px;
+			max-width: 280px;
+			margin-top: 0px;
+
+		}
+
+		@include lg {
+
+			height: 450px;
+			width: 380px;
+			text-align: center;
+			align-items: normal;
+
+		}
+
+		@include md {
+
+			height: 550px;
+			max-width: 250px;
+			align-items: center;
+
+		}
+
+		@include sm {
+
+			height: 550px;
+			max-width: 200px;
+			align-items: center;
+
+		}
 
 	}
 
@@ -34,6 +120,32 @@ html {
 		margin-bottom: 24px;
 		font-weight: 700;
 
+		@include xl {
+
+			font-size: 40px;
+			margin-bottom: 14px;
+
+		}
+
+		@include lg {
+
+			font-size: 38px;
+
+		}
+
+		@include md {
+
+			font-size: 32px;
+			margin-bottom: 5px;
+
+		}
+
+		@include sm {
+
+			font-size: 28px;
+
+		}
+
 	}
 
 	&__buttonbox {
@@ -41,6 +153,24 @@ html {
 		width: auto;
 		height: auto;
 		margin-top: 32px;
+		 display: flex;
+		order: 3;
+        align-content: center;
+		justify-content: center;
+
+		@include xl {
+
+			margin-top: 12px;
+
+		}
+
+		@include md {
+
+			margin-top: 10px;
+
+		}
+
+
 
 	}
 
@@ -57,11 +187,51 @@ html {
 		transition: 0.3s;
 		font-weight: 700;
 		font-size: 16px;
-		&:hover {
-			background-color: #705F55;
-			height: 52px;
-			width: 132px;
+
+			&:hover {
+				background-color: #705F55;
+				height: 52px;
+				width: 132px;
+			}
+
+		@include xl {
+
+			height: 40px;
+			width: 118px;
+			font-size: 14px;
+				&:hover {
+				background-color: #705F55;
+				height: 42px;
+				width: 122px;
+				}
+
 		}
+
+		@include lg {
+
+			height: 36px;
+			width: 114px;
+			font-size: 12px;
+				&:hover {
+				height: 49px;
+				width: 119px;
+				}
+
+		}
+
+		@include md {
+
+			height: 40px;
+			width: 100px;
+			font-size: 12px;
+				&:hover {
+				height: 45px;
+				width: 105px;
+				}
+
+		}
+
+
 
 	}
 	
@@ -82,7 +252,6 @@ html {
 		background: rgba(0, 0, 0, .7);
 		display: none;
 		opacity: 0;
-		transition: opacity 0.5 ;
 		z-index: 10;
 
 
@@ -99,7 +268,7 @@ html {
 		display: flex;
 		opacity: 1;
 		justify-content: center;
-		transition: opacity 0.5 ease-in;
+		cursor: pointer;
 		z-index: 10;
 
 	}
@@ -114,9 +283,11 @@ html {
 		z-index: 11;
 		display: none;
 		opacity: 0;
-		transition: opacity 0.5;
 		top: 40vh;
 		gap: 317px;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: center;
 
 	}
 
@@ -130,19 +301,100 @@ html {
 		background-color: #FFFFFF;
 		z-index: 11;
 		opacity: 1;
-		transition: opacity 0.5;
 		display: flex;
 		top: 40vh;
 		gap: 317px;
+		cursor: default;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: center;
+
+		@include xl {
+
+			max-width: 750px;
+			min-width: 190px;
+			gap: 170px;
+
+		}
+
+		@include lg {
+
+			max-width: 600px;
+			height: 300px;
+			top: 30vh;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-evenly;
+			gap: 0px;
+
+		}
+
+		@include md {
+
+			max-width: 320px;
+			height: 250px;
+			top: 25vh;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 10px;
+
+		}
+
+		@include sm {
+
+			max-width: 280px;
+			top: 15vh;
+			flex-direction: column;
+			align-items: center;
+			gap: 10px;
+
+		}
 
 	}
 
 	&__popupcontent {
 
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
 		margin-top: 56px;
 		margin-left: 95px;
 		height: 98px;
 		width: 380px;
+
+		@include xl {
+
+			height: 98px;
+			width: 450px;
+
+		}
+
+		@include lg {
+
+			margin-top: 60px;
+			margin-left: 0px;
+			align-items: center;
+			justify-content: center;
+
+		}
+
+		@include md {
+
+			margin-top: 20px;
+			align-items: center;
+			justify-content: center;
+		}
+
+		@include sm {
+
+			align-items: center;
+			justify-content: center;
+
+		}
+
+
+
 
 	}
 
@@ -152,6 +404,24 @@ html {
 		font-weight: bold;
 		color: #262524;
 
+		@include md {
+
+			font-size: 32px;
+
+		}
+
+	}
+
+	&__popupparagraph {
+
+		@include md {
+
+			font-size: 12px;
+
+		}
+
+
+
 	}
 
 	&__buttonsbox {
@@ -160,6 +430,36 @@ html {
 		margin-right: 42.5px;
 		width: 128px;
 		height: 150px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 72px;
+
+		@include lg {
+
+			margin-top: 0px;
+			margin-right: 0px;
+			max-height: 48px;
+			max-width: 128px;
+			align-items: center;
+
+
+		}
+
+		
+		@include md {
+
+			align-items: center;
+
+		}
+
+		@include sm {
+
+			align-items: center;
+
+		}
+
+
 
 	}
 
@@ -172,8 +472,24 @@ html {
 		transition: 0.3s;
 		order: 1;
 		align-self: flex-end;
-		&:hover {
-			color: #000000;
+			&:hover {
+				color: #000000;
+			}
+
+		@include lg {
+
+			position: absolute;
+			bottom: 85%;
+			align-self: unset;
+
+		}
+
+
+
+		@include sm {
+
+			z-index: 12;
+
 		}
 
 	}
@@ -182,6 +498,29 @@ html {
 
 		width: 128px;
 		height: 48px;
+		display: flex;
+		flex-direction: column;
+        order: 2;
+
+		@include lg {
+
+			width: 132px;
+			height: 52px;
+			order: 4;
+			align-items: center;
+
+		}
+
+		@include md {
+
+			
+			width: 132px;
+			height: 52px;
+			order: 4;
+
+		}
+
+
 
 
 	}
@@ -198,11 +537,27 @@ html {
 		cursor: pointer;
 		transition: 0.3s;
 		display: none;
-		&:hover {
+			&:hover {
 
-		background-color: #705F55;
-		height: 52px;
-		width: 132px;
+			background-color: #705F55;
+			height: 52px;
+			width: 132px;
+
+			}
+
+		@include md {
+
+			height: 36px;
+			width: 106px;
+			font-size: 12px;
+
+		}
+
+		@include sm {
+
+			height: 36px;
+			width: 106px;
+			font-size: 12px;
 
 		}
 
@@ -220,13 +575,13 @@ html {
 		cursor: pointer;
 		transition: 0.3s;
 		display: inline-block;
-		&:hover {
+			&:hover {
 
-		background-color: #705F55;
-		height: 52px;
-		width: 132px;
+			background-color: #705F55;
+			height: 52px;
+			width: 132px;
 
-		}
+			}
 
 	}
 
@@ -236,286 +591,20 @@ html {
 		
 	}
 
-}
+	@include md {
 
-.beach {
-	width: 505px;
-	height: 330px;
-}
-
-
-
-@media all and (max-width: 1000px) {
-	.cont1 {
-		gap: 35px;
-	}
-	.lorem {
-		font-size: 40px;
-		margin-bottom: 14px;
-	}
-	.summary {
-		font-size: 14px;
-	}
-	.art1 {
-		max-height: 350px;
-		max-width: 280px;
-		margin-top: 0px;
-	}
-	.beach {
-		width: 455px;
-		height: 280px;
-	}
-	.buttonbox {
-		margin-top: 12px;
-	}
-	button.openAlertButton {
-		height: 40px;
-		width: 118px;
-		font-size: 14px;
-		&:hover {
-			background-color: #705F55;
-			height: 42px;
-			width: 122px;
-		}
-	}
-	.alert {
-		max-width: 750px;
-		min-width: 190px;
-		gap: 170px;
-	}
-	.alertcontent {
-		height: 98px;
-		width: 450px;
-	}
-}
-@media all and (max-width: 800px) {
-	.cont1 {
-		flex-direction: column;
-		padding-top: 45px;
-		align-items: center;
-		justify-content: flex-start;
-		gap: 20px;
-	}
-	.lorem {
-		font-size: 38px;
-	}
-	.summary {
-		text-align: center;
-	}
-	.art1 {
-		align-items: center;
-		height: 450px;
-		width: 380px;
-	}
-	.beach {
-		max-width: 405px;
-		max-height: 230px;
-	}
-	button.openAlertButton {
-		height: 36px;
-		width: 114px;
-		font-size: 12px;
-		&:hover {
-			height: 49px;
-			width: 119px;
-		}
-	}
-	.alert {
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-evenly;
-		max-width: 600px;
-		height: 300px;
-		top: 30vh;
-		gap: 0px;
-	}
-	.alertcontent {
-		margin-top: 60px;
-		margin-left: 0px;
-		align-items: center;
-		justify-content: center;
-	}
-	.close {
-		position: absolute;
-		bottom: 85%;
-		align-self: unset;
-	}
-	.buttonbox2 {
-		align-items: center;
-		width: 132px;
-		height: 52px;
-		order: 4;
-	}
-	.buttonscontainer {
-		align-items: center;
-		margin-top: 0px;
-		margin-right: 0px;
-		max-height: 48px;
-		max-width: 128px;
-	}
-}
-@media all and (max-width: 520px) {
-	.cont1 {
-		flex-direction: column;
-		padding-top: 45px;
-		align-items: center;
-		justify-content: flex-start;
-		gap: 5px;
-	}
-	.lorem {
-		font-size: 32px;
-		margin-bottom: 5px;
-	}
-	.summary {
-		font-size: 14px;
-		text-align: center;
-	}
-	.art1 {
-		align-items: center;
-		height: 550px;
-		max-width: 250px;
-		margin-top: 0px;
-	}
-	.beach {
-		max-width: 305px;
-		max-height: 200px;
-	}
-	.buttonbox {
-		margin-top: 10px;
-	}
-	button.openAlertButton {
-		height: 40px;
-		width: 100px;
-		font-size: 12px;
-		&:hover {
-			height: 45px;
-			width: 105px;
-		}
-	}
-	.alert {
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		max-width: 320px;
-		height: 250px;
-		top: 25vh;
-		gap: 10px;
-	}
-	.alertcontent {
-		margin-top: 20px;
-		margin-left: 0px;
-		align-items: center;
-		justify-content: center;
-	}
-	.close {
-		position: absolute;
-		bottom: 85%;
-		align-self: unset;
-	}
-	.headalert {
-		font-size: 32px;
-	}
-	.palert {
-		font-size: 12px;
-	}
-	.resetCounterButton {
 		height: 36px;
 		width: 106px;
 		font-size: 12px;
+
 	}
-	.buttonbox2 {
-		align-items: center;
-		width: 132px;
-		height: 52px;
-		order: 4;
-	}
-	.buttonscontainer {
-		align-items: center;
-		margin-top: 0px;
-		margin-right: 0px;
-		max-height: 48px;
-		max-width: 128px;
-	}
-}
-@media all and (max-width: 320px) {
-	.cont1 {
-		flex-direction: column;
-		padding-top: 45px;
-		align-items: center;
-		justify-content: flex-start;
-		gap: 5px;
-	}
-	.lorem {
-		font-size: 28px;
-		margin-bottom: 5px;
-	}
-	.summary {
-		font-size: 12px;
-	}
-	.art1 {
-		align-items: center;
-		height: 550px;
-		max-width: 200px;
-		margin-top: 0px;
-	}
-	.beach {
-		max-width: 255px;
-		max-height: 150px;
-	}
-	.buttonbox {
-		margin-top: 10px;
-	}
-	button.openAlertButton {
-		height: 40px;
-		width: 100px;
-		font-size: 12px;
-		&:hover {
-			height: 45px;
-			width: 105px;
-		}
-	}
-	.alert {
-		flex-direction: column;
-		align-items: center;
-		max-width: 280px;
-		height: 250px;
-		top: 15vh;
-		gap: 10px;
-	}
-	.alertcontent {
-		margin-top: 20px;
-		margin-left: 0px;
-		align-items: center;
-		justify-content: center;
-	}
-	.close {
-		position: absolute;
-		bottom: 85%;
-		z-index: 12;
-		align-self: unset;
-	}
-	.headalert {
-		font-size: 32px;
-	}
-	.palert {
-		font-size: 12px;
-	}
-	.resetCounterButton {
+
+	@include sm {
+
 		height: 36px;
 		width: 106px;
 		font-size: 12px;
+
 	}
-	.buttonbox2 {
-		align-items: center;
-		width: 132px;
-		height: 52px;
-		order: 4;
-	}
-	.buttonscontainer {
-		align-items: center;
-		margin-top: 0px;
-		margin-right: 0px;
-		max-height: 48px;
-		max-width: 128px;
-	}
+
 }

@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dist/main.css">
-    <script src="src/js/main.js" defer></script>  
+    <script src="src/js/main.js" defer></script> 
 
 </head>
 
@@ -32,11 +32,22 @@
             </div>
 
             <div class="main_container__image">
-                    
-                <img class="beach"  src="images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_1394.jpg" alt="sunset on a beach" >
+            
+            <picture>
+
+                <source srcset="images/255.jpg" media="(max-width: 320px)">
+                <source srcset="images/305.jpg" media="(max-width: 520px)">
+                <source srcset="images/405.jpg" media="(max-width: 800px)">
+                <source srcset="images/455.jpg" media="(max-width: 1000px)">
+
+
+
+                <img src="images/505.jpg" alt="sunset on a beach">
+
+            </picture>
 
             </div>        
-                   
+                
         </main>
         
         <aside class="aside_alert">
