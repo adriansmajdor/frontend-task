@@ -34,22 +34,31 @@ function clickoutsidealert() {
 };
 
 
-var openAlertButton = document.querySelector('.main_container__openAlertButton');
+var openAlertButton = document.querySelectorAll('.main_container__openAlertButton');
 
-openAlertButton.addEventListener('click', openAlert);
+for (var i = 0; i < openAlertButton.length; i++) {
 
-function openAlert() {
+openAlertButton[i].addEventListener('click', openAlert);
+
+    function  openAlert() {
+
+
 
     overlay.classList.add('aside_alert__overlay--visible');
     alert.classList.add('aside_alert__popupbox--visible')
     overlay.classList.remove('aside_alert__overlay');
     alert.classList.remove('aside_alert__popupbox');
 
+}
+
 };
+
 
 var clicks = 0;
 
-openAlertButton.addEventListener('click', clickCounter);
+for ( i = 0; i < openAlertButton.length; i++) {
+
+openAlertButton[i].addEventListener('click', clickCounter);
 
 function clickCounter() {
 
@@ -64,6 +73,8 @@ function clickCounter() {
     }
 
     document.querySelector('.aside_alert__counter').innerHTML = localStorage.clickcount;
+
+}
 
 };
 
@@ -95,16 +106,19 @@ close.addEventListener('click', changebtntext2);
 
 function changebtntext2() {
 
-    setTimeout(function() {
+    if (alert.classList.contains('.aside_alert__popupbox--visible')) {
 
         resetCounterButton.innerHTML = 'Reset Counter';
 
+    }
+        
 
-    }, 1000);
 
 };
 
-openAlertButton.addEventListener('click', refreshLocalStorage)
+for ( i = 0; i < openAlertButton.length; i++) {
+
+openAlertButton[i].addEventListener('click', refreshLocalStorage)
 
 function refreshLocalStorage() {
 
@@ -123,6 +137,8 @@ function refreshLocalStorage() {
             resetCounterButton.classList.remove('aside_alert__resetCounterButton--visible');
 
     }
+
+}
 
 };
 
